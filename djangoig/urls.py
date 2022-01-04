@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from djangoig import views
+from djangoig import views as local_views
+from posts import views as post_views
 
 urlpatterns = [
-    path('hello_word/', views.hello_word),
-    path('test/', views.test),
+    path('hello_word/', local_views.hello_word),
+    path('test/', local_views.test),
+    path('posts/', post_views.list_posts),
 ]
